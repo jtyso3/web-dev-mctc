@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="student-feedback.css">
+    <title>Student Feedback</title>
+  </head>
+  <body class="m-3">
+
+    <div class="jumbotron row">
+      <h1>Please provide feedback.<br>You may do so anonymously.<br>Thank you!</h1>
+    </div>
+
+    <form class="ml-5 mr-5" action="student-feedback.html" method="post">
+      <div class="row">
+        <div class="col-sm-4">
+          <label class="labels" for="name"> Name</label><input id="name" class="form-control" type="text" name="Name" value=""> <br>
+
+          <label class="labels" for="email">Email</label><input id="email" class="form-control" type="email" name="Email" value=""> <br>
+        </div>
+
+        <div class="col-sm-8">
+          <label class="labels" for="comments">Comments</label><br><textarea required id="comments" class="form-control" name="Comments" rows="8" cols="80"></textarea> <br>
+        </div>
+      </div>
+      <div class="labels row">
+        <p>Are you a student?</p><br>
+      </div>
+      <div>
+        <div class="form-check">
+          <input class="form-check-input input" id="yes" type="radio" name="student-check" value="" checked="checked">
+          <label class="form-check-label" for="yes">Yes</label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" id="no" type="radio" name="student-check" value="">
+          <label class="form-check-label" for="no">No</label><br>
+        </div>
+      </div>
+
+      <div class="row">
+        <label for="submit-button"></label>
+        <input class="btn btn-primary btn-md mt-2" id="submit-button" type="submit">
+      </div>
+    </form>
+
+  </body>
+</html>

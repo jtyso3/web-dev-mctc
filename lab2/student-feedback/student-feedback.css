@@ -1,0 +1,30 @@
+body{
+  background-color: #EADAA2
+
+}
+
+.btn-primary{
+   background-color: #CE6C47;
+   color:
+}
+.btn-primary:hover{
+  background-color: #960200;
+}
+.jumbotron{
+  background-color: #960200;
+  color: #FFD046;
+  margin: 30px 40px 30px 40px;
+  font-family: 'Grandstander', serif;
+}
+.ml-5{
+  background-color: #241E4E;
+  padding: 20px 20px 20px 20px;
+  border-radius: 10px;
+}
+.form-check-label{
+  color: #FFD046;
+}
+.labels{
+  color: #ffd046;
+  font-family: 'Lato', sans-serif;
+}
