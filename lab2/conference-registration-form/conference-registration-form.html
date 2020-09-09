@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="conference-registration-form.css">
+    <title>Conference Registration</title>
+  </head>
+
+    <body>
+
+      <div class=>
+        <h1 class="jumbotron">Conference Registration Form</h1>
+      </div>
+
+      <form action="conference-registration-form.html" method="post">
+        <div class="name-section row">
+          <div class="col-sm-6">
+            <p>Please provide <b>Name</b></p>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="form-check">
+              <label class="form-check-label"for="Name">Name</label>
+              <input class="form-control" type="text" name="Name" value="" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="password-section row">
+
+          <div class="col-sm-6">
+            <p>Please create a <b>Passsword</b></p>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="password-box form-check">
+              <label class="form-check-label"for="password">Password</label>
+              <input class="form-control"type="text" name="password" value="" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="dob-section row">
+          <div class="col-sm-6">
+            <p>Please provide <b>Date of Birth</b></p>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="d-o-b-box form-check">
+              <label class="form-check-label" for="date-of-birth">Date of Birth</label>
+              <input class="form-control"type="date" name="date-of-birth" value="date-of-birth">
+            </div>
+        </div>
+      </div>
+
+      <div class="tshirt-section row">
+        <div class="tshirt-heading col-sm-6">
+          <p>Please select your <b>T-shirt Size</b></p>
+        </div>
+
+        <div class="tshirt-options col-sm-6 from-check">
+          <select class="tshirt form-control" name="tshirt-size" required>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+            <option value="xlarge">X-Large</option>
+            <option value="xxlarge">XX-Large</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="email-section row">
+        <div class="col-sm-6">
+          <p>Would you like to recieve emails from our sponsors?</p>
+        </div>
+
+        <div class="col-sm-6 form-radio">
+          <input class="form-control-radio"type="radio" name="email-option" value="yes" checked="checked">
+          <label class=""for="yes" name="email-option">Yes</label>
+
+          <input class=""type="radio" name="email-option" value="no">
+          <label class=""for="no">No</label>
+        </div>
+      </div>
+
+      <div class="row session-section">
+
+        <div class="col-sm-6">
+          <p>Please select a <b>Session</b> to attend</p>
+        </div>
+
+        <div class="col-sm-6 form-checkbox">
+          <input class="form-checkbox-input"type="checkbox" name="session-choice" value="morning">
+          <label class="form-checkbox-label"for="morning">Morning</label>
+
+          <input class="form-checkbox-input" type="checkbox" name="session-choice" value="afternoon">
+          <label class="form-checkbox-label"for="afternoon">Afternoon</label>
+        </div>
+
+      </div>
+
+      <div class="comment-box form-check">
+        <label class=""for="additional-comments">Please provide addition <b>Requests or Comments</b>! (Optional)</label>
+        <textarea class="form-control"name="additional-comments" rows="7" cols="70"></textarea>
+      </div>
+
+      <div class="">
+        <label for="submit"></label>
+        <input type="submit" id="btn" class="btn btn-secondary btn-md" name="submitt" value="Submit">
+      </div>
+    </form>
+  </body>
+</html>
