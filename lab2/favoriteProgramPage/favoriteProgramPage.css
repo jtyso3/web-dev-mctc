@@ -1,0 +1,51 @@
+.code-box{
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: ##e9ecef;
+  margin: 10px 10px 0px 10px;
+  height: 300px;
+  overflow: scroll;
+}
+.code{
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+body{
+  background-color: black;
+}
+
+p{
+  color: #4b749c;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+.jumbotron{
+  margin: 20px 20px 20px 20px;
+}
+h2{
+font-family: 'Montserrat', sans-serif;
+}
+h1{
+  font-family: 'Montserrat', sans-serif;
+}
+h3{
+  font-size: 40px;
+  color: #ffffffc7;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+a{
+  margin-left: 20px;
+  color: #d0d6ff;
+}
+h4{
+  font-size: 40px;
+  color: #ffffffc7;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

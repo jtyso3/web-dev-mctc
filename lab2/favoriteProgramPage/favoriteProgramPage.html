@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="favoriteProgramPage.css">
+    <title>Favorite Program Page</title>
+  </head>
+  <body>
+    <div class="row jumbotron">
+
+      <div class="col-sm-6">
+        <h1>Favorite Program</h1><br>
+      </div>
+
+      <div class="col-sm-6">
+        <h2>Title: Username-Fullname<br>By Jake Tyson</h2>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+
+        <h3>About the Progam</h3>
+
+        <p>This program was created using Python. This was a lab assignment.<br>
+          I learned how to utilize dictionaries to assign data to a value.<br>
+          Specifically in this program I stored the value of a user's full-name to the value of their username.<br>
+          There is also command-line controls that provide the ability to edit the dictionary.
+        </p>
+
+        <a href="https://github.com/jtyso3/PythonLabs/blob/master/username_fullname.py">Download from github</a>
+      </div>
+
+
+      <div class="col-sm-6">
+        <h4>Code:</h4>
+        <div class="code-box">
+          <pre><code class="code">
+        '''
+Scroll here to see all more code!
+'''
+
+def main():      #Calls program
+    try:
+        users = {'jtyson': 'Jake Tyson', 'ugrant': 'Ulysess Grant', 'jcesar': 'julius Cesar'}
+        while True:
+            display_menu()
+            command = input('Command: ')
+            command = command.lower()
+            if command == 'view':
+                view(users)
+            elif command == 'add':
+                add(users)
+            elif command == 'exit':
+                print('Bye!')
+                break
+            elif command == 'del':
+                delete(users)
+            elif command == 'edit':
+                edit(users)
+            else:
+                print('Not a valid command. Please try again. \n')
+    except KeyError:
+        print('Key Error ')
+
+
+def display_menu():  # Displays user command menu
+    print('COMMAND MENU')
+    print('view - View username')
+    print('add - Add a username')
+    print('del - Delete a username')
+    print('edit- Edit a username')
+    print('exit - Exit program')
+    print()
+
+
+def view(users): #Gives names of users, and view book titles with users
+    display_codes(users)
+    user_code = input('Enter Username to view: ')
+    user_code = user_code.lower()
+    if user_code in users:
+        user_code = users[user_code]
+        print('Username name: ' + user_code + '.\n')
+    else:
+        print('There is no no one without a username. \n')
+
+
+def add(users): #Adds Users
+    display_codes(users)
+    name_code = input('Enter new username to add: ')
+    name_code = name_code.lower()
+    if name_code in users:
+        user_name = users[name_code]
+        print(user_name + ' is already using this code. \n')
+    else:
+        user_name = input('Please enter First and Last Name: ')
+        user_name = user_name.title()
+        users[name_code] = user_name
+        print(user_name + ' was added. \n')
+
+
+def delete(users): #Allows aurthor to delete users
+    display_codes(users)
+    user_code = input('Enter username to delete: ')
+    user_code = user_code.lower()
+    if user_code in users:
+        user_name = users.pop(user_code)
+        print(user_name + ' was deleted. \n')
+    else:
+        print('There is no user with that username. \n')
+
+def edit(users): #lets you delete, and then add a user
+    display_codes(users)  # provides authors name in library
+    user_code = input('Enter Username to edit: ')  # Enter new author name
+    user_code = user_code.lower()
+    if user_code in users:  # Adds author to dictionary
+        user_name = input('Enter new Name: ')  # validation
+        user_name = user_name.title()
+        users[user_code] = user_name
+        print(user_name + ' was added. \n')
+
+def display_codes(users): #displays users, key of dictionary
+    user_codes = list(users.keys())
+    user_codes.sort()
+    line = 'Usernames: '
+    for user_codes in user_codes:
+        line += user_codes + ' '
+    print(line)
+
+
+if __name__ == '__main__':
+    main()
+      </code></pre>
+        </div>
+      </div>
+
+
+    </div>
+  </body>
+</html>
