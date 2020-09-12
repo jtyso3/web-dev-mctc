@@ -1,0 +1,15 @@
+.alert{
+  background-color: red;
+}
+
+.test{
+  background-color: blue;
+}
+
+a{
+  color: black;
+  font-weight: bolder;
+}
+a:hover{
+  font-size: 20px;
+}
