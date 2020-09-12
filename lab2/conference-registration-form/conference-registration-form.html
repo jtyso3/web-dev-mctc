@@ -17,14 +17,14 @@
       </div>
 
       <form action="conference-registration-form.html" method="post">
+        <p class="required">*Required</p>
         <div class="name-section row">
           <div class="col-sm-6">
             <p>Please provide <b>Name</b></p>
           </div>
-
           <div class="col-sm-6">
             <div class="form-check">
-              <label class="form-check-label"for="Name">Name</label>
+              <label class="form-check-label"for="Name">*Name</label>
               <input maxlength="70" class="form-control" type="text" name="Name" value="" required>
             </div>
           </div>
@@ -38,11 +38,30 @@
 
           <div class="col-sm-6">
             <div class="password-box form-check">
-              <label class="form-check-label"for="password">Password</label>
+              <label class="form-check-label"for="password">*Password</label>
               <input class="form-control"type="text" name="password" value="" required>
             </div>
           </div>
         </div>
+
+
+        <div class="email-section row">
+
+          <div class="col-sm-6">
+            <p>Please create a <b>Passsword</b></p>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="email-box form-check">
+              <label class="form-check-label"for="email">*email</label>
+              <input class="form-control"type="email" name="email" value="" required>
+            </div>
+          </div>
+        </div>
+
+
+
+
 
         <div class="dob-section row">
           <div class="col-sm-6">
@@ -63,6 +82,7 @@
         </div>
 
         <div class="tshirt-options col-sm-6 from-check">
+          <label for="tshirt-size">*T-shirt Size</label>
           <select class="tshirt form-control" name="tshirt-size" required>
             <option value="small">Small</option>
             <option value="medium">Medium</option>

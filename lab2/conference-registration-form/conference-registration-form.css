@@ -38,3 +38,10 @@ form{
 #btn:hover{
   background-color: #A599B5;
 }
+
+.required{
+  text-align: center;
+  color: #2E2F2F;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+}
