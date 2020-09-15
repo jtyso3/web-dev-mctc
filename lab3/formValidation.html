@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>form validation</title>
+  </head>
+  <body>
+    <h1>What's your name?</h1>
+
+      <label for="name">Please Enter your name</label>
+      <input class="username"type="text" name="name" value="">
+      <input  class="button" type="submit" name="submit-button" value="submit">
+
+    <p id="welcome-message"></p>
+
+    <script type="text/javascript">
+
+      let welcomeMessage = document.querySelector('#welcome-message');
+
+      let nameInput = document.querySelector('.username');
+
+      let submitButton = document.querySelector('.button');
+
+      submitButton.addEventListener('click',function(){
+        let name = nameInput.value;
+        if(name.length < 2){
+          welcomeMessage.innerHTML = `Please include atleast <b>two</b> characters.`
+
+        }else {
+          welcomeMessage.innerHTML = `Welcome, ${name}!`
+        }
+      })
+
+    </script>
+
+  </body>
+</html>
