@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Intro to Vue.js</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src='vue.js'></script>
+
+
+  </head>
+  <body>
+    <div class="app">
+      <h1>Hello Vue!</h1>
+      <p >{{message | uppercase}}</p>
+      <button v-on:click='addExclamation'>Add !</button>
+
+      <div>
+        <button v-on:click= 'clr' >Clear !</button>
+      </div>
+
+      <div>
+        <label for="name">Please enter your name:</label>
+        <input v-model='name'type="text" name="name" value="">
+        <p v-if='name'>Your name is {{name}}</p>
+      </div>
+
+      <div>
+        <table>
+          <tr>
+          <th>Item</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <tr>
+          <td>{{product_name}}</td>
+          <td>{{unit_price}}</td>
+          <td>
+            <input type="number" name="" value="" v-model='quantity'>
+          </td>
+          <td>{{total | decimal_places(2)}}</td>
+        </tr>
+
+        </table>
+      </div>
+
+    </div>
+
+    <style media="screen">
+      th,td{
+        width: 25%;
+        text-align: center;
+      }
+    </style>
+
+    <script type="text/javascript">
+
+      let app = new Vue ({
+        el: '.app',
+        data: {
+        message: 'Welcome!',
+        numberOfExclamationPoints: 1,
+        name: '',
+        product_name:'Shoes',
+        unit_price: 58.99,
+        quantity:1,
+      },
+        computed: {
+          total: function (){
+            let grand_total = this.quantity * this.unit_price
+            return grand_total
+          }
+        },
+        methods: {
+          addExclamation: function () {
+            if(this.numberOfExclamationPoints < 10){
+              this.message += '!';
+              this.numberOfExclamationPoints++;
+          }else{
+            alert('! at capacity!!')
+          }
+        },
+        clr: function(){
+          this.message = 'Welcome!';
+          this.numberOfExclamationPoints = 1;
+        }
+
+        },
+        filters: {
+          uppercase: function(string){
+          return string.toUpperCase()
+        },
+          decimal_places: function round_decimal_places(total,number_of_decimal){
+            let fixed_price = total.toFixed(number_of_decimal)
+            return fixed_price
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
