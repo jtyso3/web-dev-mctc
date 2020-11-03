@@ -1,0 +1,13 @@
+#records {
+    max-height: 250px;
+    overflow: scroll;
+}
+.sketching{
+  background-color: blue;
+}
+.drawing{
+  background-color: cyan;
+}
+.painting{
+  background-color: pink;
+}

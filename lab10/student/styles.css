@@ -1,0 +1,8 @@
+.present{
+  color: grey;
+  font-style: italic;
+}
+.absent{
+  color: black;
+  font-weight: bold;
+}

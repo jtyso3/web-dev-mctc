@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Sign In</title>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+    <div id="app">
+
+
+        <div class="alert alert-danger" v-show='errors.length > 0'>
+          <li :key='error' v-for='error in errors'>{{error}}</li>
+        </div>
+
+
+        <div class="card add-student m-2 p-2">
+            <h4 class="card-title">Add new student</h4>
+
+            <div class="form-group">
+                <label for="name">Name</label>
+                <!-- TODO v-model newStudentName -->
+                <input v-model.trim()= 'newStudent' id="name" class="form-control"> <!-- on v attribute you can include trim() nethod-->
+            </div>
+            <div class="form-group">
+                <label for="starID">Star ID</label>
+                <input v-model.trim()= 'newStarId' id="starID" class="form-control">
+            </div>
+            <button @click='addStudent' class="btn btn-primary">Add</button>
+        </div>
+
+        <div class="card student-list m-2 p-2">
+            <h4 class="card-title">Student List</h4>
+            <div id="student-table">
+
+                <table  class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>StarID</th>
+                        <th>Present?</th>
+                    </tr>
+
+
+                   <tr v-for='student in students' v-bind:key='student.starID' :class='{present: student.present, absent: !student.present}'>   //  using : is short cut for v-bind
+                     <td>{{student.name}}</td>
+                     <td>{{student.starId}}</td>
+                     <td ><input type='checkbox' v-model="student.present" @change='arrivedOrLeft(student)'></td>
+                   </tr>
+
+                </table>
+
+            </div>
+        </div>
+
+        <div v-show='mostRecentStudent.name'>
+
+          <div v-if='mostRecentStudent.present' class='alert alert-success'>
+            Welcome, {{mostRecentStudent.name}}!
+          </div>
+
+          <div v-else class="alert alert-info">
+            Goodbye, {{mostRecentStudent.name}}. See you later!
+          </div>
+
+        </div>
+
+
+    </div>
+
+    <script>
+
+      let app = new Vue ({
+        el:'#app',
+        data:{
+          newStudent:'',
+          newStarId:'',
+          students: [
+            {name:'Student A', starId: 'aa123bb', present: false},
+            {name: 'Student B', starId: 'aa123bb', present: false},
+            ],
+            errors:[],
+            mostRecentStudent: {},
+        },
+        methods:{
+          addStudent() {
+            this.errors = []
+
+
+            if (!this.newStudent) {
+              this.errors.push('Please Enter Student Name.');
+            }
+
+            if (!this.newStarId) {
+              this.errors.push('Please Enter Star ID.')
+            }
+            if (this.errors.length == 0) {   //  empty strings are falsely in JavaScript
+            let student = {name: this.newStudent,starId: this.newStarId, present: false}
+            this.students.push(student)
+
+            this.students.sort((s1,s2)=>{
+              return s1.name.toLowerCase() > s2.name.toLowerCase() ? 1:-1
+            })
+
+            this.newStudent = ''
+            this.newStarId = ''
+            }
+          },
+
+        arrivedOrLeft(student){
+          this.mostRecentStudent = student
+
+          }
+        }
+      })
+
+        // TODO Vue app
+
+
+    </script>
+
+</body>
+
+</html>
