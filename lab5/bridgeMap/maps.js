@@ -40,8 +40,8 @@ let bridges = [
 
   })
 
-  let canvas = document.querySelector('#chart');    //  selects canvas element
-  let ctx = canvas.getContext('2d');    //  provides context of canvas element
+let canvas = document.querySelector('#chart');    //  selects canvas element
+let ctx = canvas.getContext('2d');    //  provides context of canvas element
 
 //    creates new bar chart using chart.js library
 new Chart( ctx, {
