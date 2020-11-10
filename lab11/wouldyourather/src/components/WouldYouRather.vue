@@ -1,9 +1,9 @@
 <template>
-  <div class="wyr">
-    <h2>Please Make Your Choice</h2>
+  <div id= questions class="wyr">
+    
     <h3>{{ question }}</h3>
     
-    <div>
+    <div >
       <label for="wizad"> {{ answer1 }}</label>
       <input type="radio" name="wizard" v-model ="choice" v-bind:value="answer1" v-on:change="changeMade">
 
@@ -51,5 +51,12 @@ li {
 }
 a {
   color: #42b983;
+}
+#questions{
+  background-color: lightgray;
+  margin: 10px 10px 10px 10px;
+  border-block-start-style: solid;
+  border-radius: 70px;
+  border-width: 2px;
 }
 </style>
